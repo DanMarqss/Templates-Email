@@ -1,0 +1,93 @@
+body {
+    font-family: sans-serif;
+    background-color: #f0f8ff; /* Alice Blue */
+    color: #000080; /* Navy Blue */
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 500px;
+    margin: 20px auto;
+    background-color: #ffffff; /* White */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 128, 0.1); /* Light Navy Blue shadow */
+  }
+  
+  .nav-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  .nav-button {
+    background-color: #0000ff; /* Blue */
+    color: #ffffff; /* White */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .nav-button:hover {
+    background-color: #000080; /* Navy Blue */
+  }
+  
+  .message-group {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  .message {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  .message-text {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    white-space: pre-wrap;
+  }
+  
+  .variable {
+    font-weight: bold;
+    color: blue;
+  }
+  
+  .input-field {
+    margin-bottom: 10px;
+  }
+  
+  .input-field label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .input-field input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .message-select {
+    margin-bottom: 10px;
+  }
+  
+  .message-select select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .variable-group {
+    display: none;
+  }
+  

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mensagens Personalizadas</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="container">
+    <div class="nav-buttons">
+      <button class="nav-button" id="financeiro-button">Financeiro</button>
+      <button class="nav-button" id="suporte-button">Suporte</button>
+      <button class="nav-button" id="comercial-button">Comercial</button>
+    </div>
+
+    <div class="message-group" id="financeiro-group">
+      <h2>Financeiro</h2>
+      <div class="message-select">
+        <label for="financeiro-mensagem-select">Selecione o Tipo de Mensagem</label>
+        <select id="financeiro-mensagem-select" onchange="selectMessage('financeiro')">
+          <option value="fatura-primeira">SUA FATURA AXES CHEGOU - Primeira Fatura</option>
+          <option value="fatura-envio-nf">FATURA AXES | Envio de NF e Boleto</option>
+        </select>
+      </div>
+
+      <div class="variable-group" id="fatura-primeira-variables">
+        <div class="input-field">
+          <label for="boleto">Nº do Boleto</label>
+          <input type="text" id="boleto" name="boleto">
+        </div>
+        <div class="input-field">
+          <label for="mes-fatura">Mês da Fatura (MM/YY)</label>
+          <input type="text" id="mes-fatura" name="mes-fatura" placeholder="MM/YY">
+        </div>
+        <div class="input-field">
+          <label for="data-vencimento">Data de Vencimento (DD/MM/YYYY)</label>
+          <input type="text" id="data-vencimento" name="data-vencimento" placeholder="DD/MM/YYYY">
+        </div>
+        <div class="input-field">
+          <label for="valor">Valor</label>
+          <input type="number" id="valor" name="valor">
+        </div>
+        <div class="input-field">
+          <label for="codigo-cliente">Código do Cliente</label>
+          <input type="text" id="codigo-cliente" name="codigo-cliente">
+        </div>
+      </div>
+
+      <div class="variable-group" id="fatura-envio-nf-variables">
+        <div class="input-field">
+          <label for="nota">Nº da Nota</label>
+          <input type="text" id="nota" name="nota">
+        </div>
+        <div class="input-field">
+          <label for="taxa-instalacao">Taxa de Instalação</label>
+          <input type="number" id="taxa-instalacao" name="taxa-instalacao">
+        </div>
+        <div class="input-field">
+          <label for="data-vencimento-nf">Data de Vencimento (DD/MM/YYYY)</label>
+          <input type="text" id="data-vencimento-nf" name="data-vencimento-nf" placeholder="DD/MM/YYYY">
+        </div>
+        <div class="input-field">
+          <label for="data-mensalidade">Data da Mensalidade (DD/MM/YYYY)</label>
+          <input type="text" id="data-mensalidade" name="data-mensalidade" placeholder="DD/MM/YYYY">
+        </div>
+        <div class="input-field">
+          <label for="pro-rata">Pro Rata</label>
+          <input type="number" id="pro-rata" name="pro-rata">
+        </div>
+        <div class="input-field">
+          <label for="valor-nf">Valor</label>
+          <input type="number" id="valor-nf" name="valor-nf">
+        </div>
+        <div class="input-field">
+          <label for="vencimento-servico">Vencimento do Serviço (DD/MM/YYYY)</label>
+          <input type="text" id="vencimento-servico" name="vencimento-servico" placeholder="DD/MM/YYYY">
+        </div>
+      </div>
+
+      <div class="message" id="financeiro-message">
+        <div class="message-text" id="financeiro-message-text"></div>
+      </div>
+
+      <button onclick="generateMessage('financeiro')">Gerar Mensagem</button>
+    </div>
+
+    <div class="message-group" id="suporte-group" style="display: none;">
+      <h2>Suporte</h2>
+      <div class="message-select">
+        <label for="suporte-mensagem-select">Selecione o Tipo de Mensagem</label>
+        <select id="suporte-mensagem-select" onchange="selectMessage('suporte')">
+          <option value="suporte-padrao">Ativação Internet Banda Larga</option>
+          <option value="ativacao-internet-dedicada">Ativação Internet Dedicada</option>
+        </select>
+      </div>
+
+      <div class="variable-group" id="suporte-padrao-variables">
+        <div class="input-field">
+          <label for="megas-contratados">Megas Contratados</label>
+          <input type="text" id="megas-contratados" name="megas-contratados">
+        </div>
+        <div class="input-field">
+          <label for="autenticacao">Autenticação</label>
+          <input type="text" id="autenticacao" name="autenticacao">
+        </div>
+        <div class="input-field">
+          <label for="senha">Senha</label>
+          <input type="text" id="senha" name="senha">
+        </div>
+        <div class="input-field">
+          <label for="codigo-cliente-suporte">Código do Cliente</label>
+          <input type="text" id="codigo-cliente-suporte" name="codigo-cliente-suporte">
+        </div>
+      </div>
+
+      <div class="variable-group" id="ativacao-internet-dedicada-variables">
+        <div class="input-field">
+          <label for="megas-contratados-dedicada">Megas Contratados</label>
+          <input type="text" id="megas-contratados-dedicada" name="megas-contratados-dedicada">
+        </div>
+        <div class="input-field">
+          <label for="rede">Rede</label>
+          <input type="text" id="rede" name="rede">
+        </div>
+        <div class="input-field">
+          <label for="gateway">Gateway</label>
+          <input type="text" id="gateway" name="gateway">
+        </div>
+        <div class="input-field">
+          <label for="primeiro-ip">Primeiro IP</label>
+          <input type="text" id="primeiro-ip" name="primeiro-ip">
+        </div>
+        <div class="input-field">
+          <label for="ultimo-ip">Último IP</label>
+          <input type="text" id="ultimo-ip" name="ultimo-ip">
+        </div>
+        <div class="input-field">
+          <label for="dns">DNS</label>
+          <input type="text" id="dns" name="dns">
+        </div>
+        <div class="input-field">
+          <label for="codigo-cliente-dedicada">Código do Cliente</label>
+          <input type="text" id="codigo-cliente-dedicada" name="codigo-cliente-dedicada">
+        </div>
+      </div>
+
+      <div class="message" id="suporte-message">
+        <div class="message-text" id="suporte-message-text"></div>
+      </div>
+
+      <button onclick="generateMessage('suporte')">Gerar Mensagem</button>
+    </div>
+
+    <div class="message-group" id="comercial-group" style="display: none;">
+      <h2>Comercial</h2>
+      <!-- Conteúdo para Comercial -->
+    </div>
+
+  </div>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
